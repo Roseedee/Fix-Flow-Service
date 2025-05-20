@@ -1,9 +1,12 @@
 const express = require('express');
+const log = require('./middleware/log');
 
 const app = express();
+app.use(log);
 
 app.get('/', (req, res) => {
     res.send('Welcome to Fix Flow Service!');
+    res.status(200);
 });
 
 
