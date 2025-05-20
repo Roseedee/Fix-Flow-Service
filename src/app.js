@@ -1,8 +1,7 @@
 const express = require('express');
 const log = require('./middlewares/log');
-require('dotenv').config();
+const env = require('./config/env');
 
-const port = process.env.PORT || 3000;
 const app = express();
 app.use(log);
 
@@ -11,6 +10,6 @@ app.get('/', (req, res) => {
     res.status(200);
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(env.PORT, () => {
+    console.log(`Server is running on port ${env.PORT}`);
 });
