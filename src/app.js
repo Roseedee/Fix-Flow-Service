@@ -1,5 +1,5 @@
 const express = require('express');
-const log = require('./middleware/log');
+const log = require('./middlewares/log');
 require('dotenv').config();
 
 const port = process.env.PORT || 3000;
